@@ -21,7 +21,8 @@ defmodule CommonsPub.Core.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:pointers, "~> 0.4.2"},
+      # {:pointers, "~> 0.4.2"},
+      {:pointers, git: "https://github.com/commonspub/pointers", branch: "main"},
       # {:pointers, path: "../pointers"},
       {:flexto, "~> 0.2"},
     ]
