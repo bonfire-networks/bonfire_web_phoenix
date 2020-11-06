@@ -16,6 +16,7 @@ defmodule CommonsPub.Core.Web do
 
   def view(root \\ "lib/web/templates") do
     quote do
+      # IO.inspect(core_root: unquote(root))
       use Phoenix.View,
         root: unquote(root),
         pattern: "**/*",
