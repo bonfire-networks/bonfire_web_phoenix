@@ -1,4 +1,4 @@
-defmodule CommonsPub.Core.Web.ErrorHelpers do
+defmodule CommonsPub.WebPhoenix.ErrorHelpers do
   @moduledoc """
   Conveniences for translating and building error messages.
   """
@@ -46,9 +46,9 @@ defmodule CommonsPub.Core.Web.ErrorHelpers do
     # should be written to the errors.po file. The :count option is
     # set by Ecto and indicates we should also apply plural rules.
     if count = opts[:count] do
-      Gettext.dngettext(CommonsPub.Core.Gettext, "errors", msg, msg, count, opts)
+      Gettext.dngettext(CommonsPub.WebPhoenix.Gettext, "errors", msg, msg, count, opts)
     else
-      Gettext.dgettext(CommonsPub.Core.Gettext, "errors", msg, opts)
+      Gettext.dgettext(CommonsPub.WebPhoenix.Gettext, "errors", msg, opts)
     end
   end
 end

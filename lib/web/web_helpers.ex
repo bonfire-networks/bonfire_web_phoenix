@@ -1,4 +1,4 @@
-defmodule CommonsPub.Core.WebHelpers do
+defmodule CommonsPub.WebPhoenixHelpers do
   import Phoenix.LiveView
   require Logger
 
@@ -234,5 +234,13 @@ defmodule CommonsPub.Core.WebHelpers do
     {:noreply, socket |> assign(page: assigns.page + 1) |> fetch_function.(assigns)}
   end
 
+  def routes() do
+    mod = Application.get_env(:cpub_web_phoenix, :routes_helper_module)
 
+    if(Code.ensure_loaded?(mod)) do
+      mod
+    else
+      CommonsPub.WebPhoenix.Router.Helpers
+    end
+  end
 end

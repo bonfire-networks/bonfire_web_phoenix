@@ -1,26 +1,27 @@
-defmodule CommonsPub.Core.Web do
+defmodule CommonsPub.WebPhoenix do
   @moduledoc false
 
   def controller do
     quote do
-      use Phoenix.Controller, namespace: CommonsPub.Core.Web
+      use Phoenix.Controller, namespace: CommonsPub.WebPhoenix
 
       import Plug.Conn
-      import CommonsPub.Core.Gettext
-      alias CommonsPub.Core.Web.Router.Helpers, as: Routes
+      import CommonsPub.WebPhoenix.Gettext
+      alias CommonsPub.WebPhoenix.Router.Helpers, as: Routes
 
-      import CommonsPub.Core.WebHelpers
+      import CommonsPub.WebPhoenixHelpers
 
     end
   end
 
   def view(root \\ "lib/web/templates") do
     quote do
-      # IO.inspect(core_root: unquote(root))
+      # IO.inspect(vox_root: unquote(root))
+
       use Phoenix.View,
         root: unquote(root),
         pattern: "**/*",
-        namespace: CommonsPub.Core.Web
+        namespace: CommonsPub.WebPhoenix
 
       # Import convenience functions from controllers
       import Phoenix.Controller,
@@ -34,7 +35,7 @@ defmodule CommonsPub.Core.Web do
   def live_view do
     quote do
       use Phoenix.LiveView,
-        layout: {CommonsPub.Core.Web.LayoutView, "live.html"}
+        layout: {CommonsPub.WebPhoenix.LayoutView, "live.html"}
 
       unquote(view_helpers())
     end
@@ -61,7 +62,7 @@ defmodule CommonsPub.Core.Web do
   def channel do
     quote do
       use Phoenix.Channel
-      import CommonsPub.Core.Gettext
+      import CommonsPub.WebPhoenix.Gettext
     end
   end
 
@@ -76,11 +77,11 @@ defmodule CommonsPub.Core.Web do
       # Import basic rendering functionality (render, render_layout, etc)
       import Phoenix.View
 
-      import CommonsPub.Core.Web.ErrorHelpers
-      import CommonsPub.Core.Gettext
-      alias CommonsPub.Core.Web.Router.Helpers, as: Routes
+      import CommonsPub.WebPhoenix.ErrorHelpers
+      import CommonsPub.WebPhoenix.Gettext
+      alias CommonsPub.WebPhoenix.Router.Helpers, as: Routes
 
-      import CommonsPub.Core.WebHelpers
+      import CommonsPub.WebPhoenixHelpers
     end
   end
 
