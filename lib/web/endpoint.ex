@@ -1,5 +1,5 @@
-defmodule CommonsPub.WebPhoenix.Endpoint do
-  use Phoenix.Endpoint, otp_app: :cpub_web_phoenix
+defmodule Bonfire.WebPhoenix.Endpoint do
+  use Phoenix.Endpoint, otp_app: :bonfire_web_phoenix
 
   # The session will be stored in the cookie and signed,
   # this means its contents can be read but not tampered with.
@@ -7,11 +7,11 @@ defmodule CommonsPub.WebPhoenix.Endpoint do
   @session_options [
     store: :cookie,
     key: "_session_key",
-    signing_salt: Application.get_env(:cpub_web_phoenix, :signing_salt),
-    encryption_salt: Application.get_env(:cpub_web_phoenix, :encryption_salt)
+    signing_salt: Application.get_env(:bonfire_web_phoenix, :signing_salt),
+    encryption_salt: Application.get_env(:bonfire_web_phoenix, :encryption_salt)
   ]
 
-  socket "/socket", CommonsPub.WebPhoenix.UserSocket, websocket: true, longpoll: false
+  socket "/socket", Bonfire.WebPhoenix.UserSocket, websocket: true, longpoll: false
 
   socket "/live", Phoenix.LiveView.Socket,
     websocket: [connect_info: [session: @session_options]]
@@ -22,7 +22,7 @@ defmodule CommonsPub.WebPhoenix.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/",
-    from: Application.get_env(:cpub_web_phoenix, :otp_app),
+    from: Application.get_env(:bonfire_web_phoenix, :otp_app),
     gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
 
@@ -32,7 +32,7 @@ defmodule CommonsPub.WebPhoenix.Endpoint do
     socket "/phoenix/live_reload/socket", Phoenix.LiveReloader.Socket
     plug Phoenix.LiveReloader
     plug Phoenix.CodeReloader
-    plug Phoenix.Ecto.CheckRepoStatus, otp_app: Application.get_env(:cpub_web_phoenix, :otp_app)
+    plug Phoenix.Ecto.CheckRepoStatus, otp_app: Application.get_env(:bonfire_web_phoenix, :otp_app)
   end
 
   plug Phoenix.LiveDashboard.RequestLogger,
@@ -50,5 +50,5 @@ defmodule CommonsPub.WebPhoenix.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
-  plug CommonsPub.WebPhoenix.Router
+  plug Bonfire.WebPhoenix.Router
 end

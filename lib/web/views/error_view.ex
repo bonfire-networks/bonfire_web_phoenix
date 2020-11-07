@@ -1,5 +1,5 @@
-defmodule CommonsPub.WebPhoenix.ErrorView do
-  use CommonsPub.WebPhoenix, :view
+defmodule Bonfire.WebPhoenix.ErrorView do
+  use Bonfire.WebPhoenix, :view
 
   # If you want to customize a particular status code
   # for a certain format, you may uncomment below.

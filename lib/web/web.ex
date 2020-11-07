@@ -1,15 +1,15 @@
-defmodule CommonsPub.WebPhoenix do
+defmodule Bonfire.WebPhoenix do
   @moduledoc false
 
   def controller do
     quote do
-      use Phoenix.Controller, namespace: CommonsPub.WebPhoenix
+      use Phoenix.Controller, namespace: Bonfire.WebPhoenix
 
       import Plug.Conn
-      import CommonsPub.WebPhoenix.Gettext
-      alias CommonsPub.WebPhoenix.Router.Helpers, as: Routes
+      import Bonfire.WebPhoenix.Gettext
+      alias Bonfire.WebPhoenix.Router.Helpers, as: Routes
 
-      import CommonsPub.WebPhoenixHelpers
+      import Bonfire.WebPhoenixHelpers
 
     end
   end
@@ -21,7 +21,7 @@ defmodule CommonsPub.WebPhoenix do
       use Phoenix.View,
         root: unquote(root),
         pattern: "**/*",
-        namespace: CommonsPub.WebPhoenix
+        namespace: Bonfire.WebPhoenix
 
       # Import convenience functions from controllers
       import Phoenix.Controller,
@@ -35,7 +35,7 @@ defmodule CommonsPub.WebPhoenix do
   def live_view do
     quote do
       use Phoenix.LiveView,
-        layout: {CommonsPub.WebPhoenix.LayoutView, "live.html"}
+        layout: {Bonfire.WebPhoenix.LayoutView, "live.html"}
 
       unquote(view_helpers())
     end
@@ -62,7 +62,7 @@ defmodule CommonsPub.WebPhoenix do
   def channel do
     quote do
       use Phoenix.Channel
-      import CommonsPub.WebPhoenix.Gettext
+      import Bonfire.WebPhoenix.Gettext
     end
   end
 
@@ -77,11 +77,11 @@ defmodule CommonsPub.WebPhoenix do
       # Import basic rendering functionality (render, render_layout, etc)
       import Phoenix.View
 
-      import CommonsPub.WebPhoenix.ErrorHelpers
-      import CommonsPub.WebPhoenix.Gettext
-      alias CommonsPub.WebPhoenix.Router.Helpers, as: Routes
+      import Bonfire.WebPhoenix.ErrorHelpers
+      import Bonfire.WebPhoenix.Gettext
+      alias Bonfire.WebPhoenix.Router.Helpers, as: Routes
 
-      import CommonsPub.WebPhoenixHelpers
+      import Bonfire.WebPhoenixHelpers
     end
   end
 

@@ -1,3 +1,3 @@
-defmodule CommonsPub.WebPhoenix.LayoutView do
-  use CommonsPub.WebPhoenix, :view
+defmodule Bonfire.WebPhoenix.LayoutView do
+  use Bonfire.WebPhoenix, :view
 end

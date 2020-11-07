@@ -1,4 +1,4 @@
-defmodule CommonsPub.WebPhoenixHelpers do
+defmodule Bonfire.WebPhoenixHelpers do
   import Phoenix.LiveView
   require Logger
 
@@ -235,12 +235,12 @@ defmodule CommonsPub.WebPhoenixHelpers do
   end
 
   def routes() do
-    mod = Application.get_env(:cpub_web_phoenix, :routes_helper_module)
+    mod = Application.get_env(:bonfire_web_phoenix, :routes_helper_module)
 
     if(Code.ensure_loaded?(mod)) do
       mod
     else
-      CommonsPub.WebPhoenix.Router.Helpers
+      Bonfire.WebPhoenix.Router.Helpers
     end
   end
 end

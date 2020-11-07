@@ -1,8 +1,8 @@
-defmodule CommonsPub.WebPhoenix.UserSocket do
+defmodule Bonfire.WebPhoenix.UserSocket do
   use Phoenix.Socket
 
   ## Channels
-  # channel "room:*", CommonsPub.WebPhoenix.RoomChannel
+  # channel "room:*", Bonfire.WebPhoenix.RoomChannel
 
   # Socket params are passed from the client and can
   # be used to verify and authenticate a user. After
@@ -27,7 +27,7 @@ defmodule CommonsPub.WebPhoenix.UserSocket do
   # Would allow you to broadcast a "disconnect" event and terminate
   # all active sockets and channels for a given user:
   #
-  #     CommonsPub.WebPhoenix.Endpoint.broadcast("user_socket:#{user.id}", "disconnect", %{})
+  #     Bonfire.WebPhoenix.Endpoint.broadcast("user_socket:#{user.id}", "disconnect", %{})
   #
   # Returning `nil` makes this socket anonymous.
   @impl true

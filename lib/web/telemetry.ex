@@ -1,4 +1,4 @@
-defmodule CommonsPub.WebPhoenix.Telemetry do
+defmodule Bonfire.WebPhoenix.Telemetry do
   use Supervisor
   import Telemetry.Metrics
 
@@ -20,7 +20,7 @@ defmodule CommonsPub.WebPhoenix.Telemetry do
   end
 
   def metrics do
-    otp_app = Application.get_env(:cpub_web_phoenix, :otp_app)
+    otp_app = Application.get_env(:bonfire_web_phoenix, :otp_app)
 
     [
       # Phoenix Metrics
@@ -51,7 +51,7 @@ defmodule CommonsPub.WebPhoenix.Telemetry do
     [
       # A module, function and arguments to be invoked periodically.
       # This function must call :telemetry.execute/3 and a metric must be added above.
-      # {CommonsPub.WebPhoenix, :count_users, []}
+      # {Bonfire.WebPhoenix, :count_users, []}
     ]
   end
 end

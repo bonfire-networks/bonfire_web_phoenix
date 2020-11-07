@@ -1,18 +1,18 @@
-defmodule CommonsPub.WebPhoenix.Router do
-  use CommonsPub.WebPhoenix, :router
+defmodule Bonfire.WebPhoenix.Router do
+  use Bonfire.WebPhoenix, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
     plug :fetch_live_flash
-    plug :put_root_layout, {CommonsPub.WebPhoenix.LayoutView, :root}
+    plug :put_root_layout, {Bonfire.WebPhoenix.LayoutView, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
   end
 
   scope "/" do
     pipe_through :browser
-    forward "/", Application.get_env(:cpub_web_phoenix, :routes_module)
+    forward "/", Application.get_env(:bonfire_web_phoenix, :routes_module)
   end
 
   # If your application does not have an admins-only section yet,
@@ -23,7 +23,7 @@ defmodule CommonsPub.WebPhoenix.Router do
 
     scope "/" do
       pipe_through :browser
-      live_dashboard "/dashboard", metrics: CommonsPub.WebPhoenix.Telemetry
+      live_dashboard "/dashboard", metrics: Bonfire.WebPhoenix.Telemetry
     end
   end
 end
