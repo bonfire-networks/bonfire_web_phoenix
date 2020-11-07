@@ -1,10 +1,30 @@
-# bonfire_web_phoenix
+# Bonfire:Web:Phoenix
+
+An extension for [Bonfire](https://bonfire.cafe/) that handles:
+
+- Web Endpoint
+- Routing
+- Sockets
+- Top-level templates
+- Some Helpers
+
+## Handy commands
 
 ## Copyright and License
 
-Copyright (c) 2020 James Laver, Mayel de Borniol, bonfire_web_phoenix Contributors
+Copyright (c) 2020 Bonfire Contributors
+Copyright (c) 2020 VoxPublica Contributors
+Copyright (c) 2020 CommonsPub Contributors
 
-This Source Code Form is subject to the terms of the Mozilla Public
-License, v. 2.0. If a copy of the MPL was not distributed with this
-file, You can obtain one at http://mozilla.org/MPL/2.0/.
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as
+published by the Free Software Foundation, either version 3 of the
+License, or (at your option) any later version.
 
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public
+License along with this program.  If not, see <https://www.gnu.org/licenses/>.
