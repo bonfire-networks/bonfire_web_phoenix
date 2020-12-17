@@ -7,8 +7,8 @@ defmodule Bonfire.WebPhoenix.Endpoint do
   @session_options [
     store: :cookie,
     key: "_session_key",
-    signing_salt: Application.get_env(:bonfire_web_phoenix, :signing_salt),
-    encryption_salt: Application.get_env(:bonfire_web_phoenix, :encryption_salt)
+    signing_salt: Bonfire.Common.Config.get_ext(:bonfire_web_phoenix, :signing_salt),
+    encryption_salt: Bonfire.Common.Config.get_ext(:bonfire_web_phoenix, :encryption_salt)
   ]
 
   socket "/socket", Bonfire.WebPhoenix.UserSocket, websocket: true, longpoll: false
@@ -22,7 +22,7 @@ defmodule Bonfire.WebPhoenix.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/",
-    from: Application.get_env(:bonfire_web_phoenix, :otp_app),
+    from: Bonfire.Common.Config.get_ext(:bonfire_web_phoenix, :otp_app),
     gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
 
@@ -32,7 +32,7 @@ defmodule Bonfire.WebPhoenix.Endpoint do
     socket "/phoenix/live_reload/socket", Phoenix.LiveReloader.Socket
     plug Phoenix.LiveReloader
     plug Phoenix.CodeReloader
-    plug Phoenix.Ecto.CheckRepoStatus, otp_app: Application.get_env(:bonfire_web_phoenix, :otp_app)
+    plug Phoenix.Ecto.CheckRepoStatus, otp_app: Bonfire.Common.Config.get_ext(:bonfire_web_phoenix, :otp_app)
   end
 
   plug Phoenix.LiveDashboard.RequestLogger,

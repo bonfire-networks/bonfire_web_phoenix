@@ -13,7 +13,7 @@ defmodule Bonfire.WebPhoenix.FallbackApplication do
       # Bonfire.Repo,
       {Phoenix.PubSub, name: Bonfire.PubSub},
       Bonfire.WebPhoenix.Endpoint,
-      # {Oban, Application.get_env(:bonfire, Oban)}
+      # {Oban, Bonfire.Common.Config.get_ext(:bonfire, Oban)}
     ]
     |> Supervisor.start_link(strategy: :one_for_one, name: @sup_name)
   end

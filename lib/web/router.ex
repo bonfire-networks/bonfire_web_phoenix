@@ -12,7 +12,7 @@ defmodule Bonfire.WebPhoenix.Router do
 
   scope "/" do
     pipe_through :browser
-    forward "/", Application.get_env(:bonfire_web_phoenix, :routes_module)
+    forward "/", Bonfire.Common.Config.get_ext(:bonfire_web_phoenix, :routes_module)
   end
 
   # If your application does not have an admins-only section yet,
