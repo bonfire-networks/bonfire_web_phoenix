@@ -22,7 +22,7 @@ defmodule Bonfire.WebPhoenix.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/",
-    from: Bonfire.Common.Config.get_ext(:bonfire_web_phoenix, :otp_app),
+    from: Bonfire.Common.Config.get!(:otp_app),
     gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
 
@@ -32,7 +32,7 @@ defmodule Bonfire.WebPhoenix.Endpoint do
     socket "/phoenix/live_reload/socket", Phoenix.LiveReloader.Socket
     plug Phoenix.LiveReloader
     plug Phoenix.CodeReloader
-    plug Phoenix.Ecto.CheckRepoStatus, otp_app: Bonfire.Common.Config.get_ext(:bonfire_web_phoenix, :otp_app)
+    plug Phoenix.Ecto.CheckRepoStatus, otp_app: Bonfire.Common.Config.get!(:otp_app)
   end
 
   plug Phoenix.LiveDashboard.RequestLogger,

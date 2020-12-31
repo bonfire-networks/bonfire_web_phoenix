@@ -20,7 +20,7 @@ defmodule Bonfire.WebPhoenix.Telemetry do
   end
 
   def metrics do
-    otp_app = Bonfire.Common.Config.get_ext(:bonfire_web_phoenix, :otp_app)
+    otp_app = Bonfire.Common.Config.get!(:otp_app)
 
     [
       # Phoenix Metrics

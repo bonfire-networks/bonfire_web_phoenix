@@ -1,5 +1,5 @@
 <%= live_component(
   @socket,
-  Bonfire.Common.Config.get_ext(:bonfire_web_phoenix, :live_view_module),
+  Bonfire.Common.Config.get!(:live_view_module)),
   assigns
 ) %>

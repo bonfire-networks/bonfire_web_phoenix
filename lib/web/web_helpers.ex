@@ -235,7 +235,7 @@ defmodule Bonfire.WebPhoenixHelpers do
   end
 
   def routes() do
-    mod = Bonfire.Common.Config.get_ext(:bonfire_web_phoenix, :routes_helper_module)
+    mod = Bonfire.Common.Config.get!(:routes_helper_module)
 
     if(Code.ensure_loaded?(mod)) do
       mod
