@@ -14,7 +14,7 @@ config :bonfire_web_phoenix, Bonfire.WebPhoenix.Endpoint,
   url: [host: "localhost"],
   secret_key_base: secret_key_base,
   render_errors: [view: Bonfire.WebPhoenix.ErrorView, accepts: ~w(html json), layout: false],
-  pubsub_server: VoxPublica.PubSub,
+  pubsub_server: Bonfire.PubSub,
   live_view: [signing_salt: signing_salt]
 
 config :phoenix, :json_library, Jason
