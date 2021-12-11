@@ -1,4 +1,4 @@
-use Mix.Config
+import Config
 
 signing_salt = System.get_env("SIGNING_SALT", "CqAoopA2")
 encryption_salt = System.get_env("ENCRYPTION_SALT", "g7K25as98msad0qlSxhNDwnnzTqklK10")
