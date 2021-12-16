@@ -1,4 +1,4 @@
-# Bonfire:Web:Phoenix
+# Bonfire.Web.Phoenix
 
 An extension for [Bonfire](https://bonfire.cafe/) that handles:
 
