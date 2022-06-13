@@ -45,7 +45,7 @@ defmodule Bonfire.WebPhoenix.Endpoint do
   plug Plug.Parsers,
     parsers: [:urlencoded, :multipart, :json],
     pass: ["*/*"],
-    json_decoder: Application.get_env(:phoenix, :json_library) # Phoenix.json_library()
+    json_decoder: Application.compile_env(:phoenix, :json_library) # Phoenix.json_library()
 
   plug Plug.MethodOverride
   plug Plug.Head
