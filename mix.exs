@@ -9,7 +9,7 @@ defmodule Bonfire.WebPhoenix.MixProject do
       elixir: "~> 1.10",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
-      compilers: [:phoenix, :gettext] ++ Mix.compilers(),
+      compilers: [:phoenix, ] ++ Mix.compilers(),
     ]
   end
 
