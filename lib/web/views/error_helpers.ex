@@ -14,10 +14,12 @@ defmodule Bonfire.WebPhoenix.ErrorHelpers do
       if MapSet.member?(seen, error) do
         {errors, seen}
       else
-        tag = content_tag(:span, translate_error(error),
-          class: "invalid-feedback",
-          phx_feedback_for: input_id(form, field)
-        )
+        tag =
+          content_tag(:span, translate_error(error),
+            class: "invalid-feedback",
+            phx_feedback_for: input_id(form, field)
+          )
+
         {[tag | errors], MapSet.put(seen, error)}
       end
     end)
@@ -46,7 +48,14 @@ defmodule Bonfire.WebPhoenix.ErrorHelpers do
     # should be written to the errors.po file. The :count option is
     # set by Ecto and indicates we should also apply plural rules.
     if count = opts[:count] do
-      Gettext.dngettext(Bonfire.Common.Localise.Gettext, "errors", msg, msg, count, opts)
+      Gettext.dngettext(
+        Bonfire.Common.Localise.Gettext,
+        "errors",
+        msg,
+        msg,
+        count,
+        opts
+      )
     else
       Gettext.dgettext(Bonfire.Common.Localise.Gettext, "errors", msg, opts)
     end

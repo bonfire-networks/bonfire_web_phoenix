@@ -10,7 +10,6 @@ defmodule Bonfire.WebPhoenix do
       alias Bonfire.WebPhoenix.Router.Helpers, as: Routes
 
       import Bonfire.WebPhoenixHelpers
-
     end
   end
 
