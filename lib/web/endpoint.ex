@@ -26,7 +26,7 @@ defmodule Bonfire.WebPhoenix.Endpoint do
     at: "/",
     from: Bonfire.Common.Config.get!(:otp_app),
     gzip: false,
-    only: ~w(css fonts images js favicon.ico robots.txt)
+    only: ~w(css fonts images js favicon.ico pwa robots.txt)
   )
 
   # Code reloading can be explicitly enabled under the
