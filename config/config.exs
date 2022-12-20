@@ -27,7 +27,7 @@ config :bonfire_web_phoenix, Bonfire.WebPhoenix.Endpoint,
     accepts: ~w(html json),
     layout: false
   ],
-  pubsub_server: Bonfire.PubSub,
+  pubsub_server: Bonfire.Common.PubSub,
   live_view: [signing_salt: signing_salt]
 
 config :phoenix, :json_library, Jason

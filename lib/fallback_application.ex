@@ -13,7 +13,7 @@ defmodule Bonfire.WebPhoenix.FallbackApplication do
         # Pointers.Tables,
         Bonfire.WebPhoenix.Telemetry,
         # Bonfire.Common.Repo,
-        {Phoenix.PubSub, name: Bonfire.PubSub},
+        {Phoenix.PubSub, name: Bonfire.Common.PubSub},
         Bonfire.WebPhoenix.Endpoint
 
         # {Oban, Bonfire.Common.Config.get_ext(:bonfire, Oban)}
