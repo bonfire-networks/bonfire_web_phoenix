@@ -10,7 +10,7 @@ defmodule Bonfire.WebPhoenix.FallbackApplication do
 
     Supervisor.start_link(
       [
-        # Pointers.Tables,
+        # Needle.Tables,
         Bonfire.WebPhoenix.Telemetry,
         # Bonfire.Common.Repo,
         {Phoenix.PubSub, name: Bonfire.Common.PubSub},
