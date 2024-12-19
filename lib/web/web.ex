@@ -6,7 +6,7 @@ defmodule Bonfire.WebPhoenix do
       use Phoenix.Controller, namespace: Bonfire.WebPhoenix
 
       import Plug.Conn
-      import Bonfire.Common.Localise.Gettext
+      use Gettext, backend: Bonfire.Common.Localise.Gettext
       alias Bonfire.WebPhoenix.Router.Helpers, as: Routes
 
       import Bonfire.WebPhoenixHelpers
@@ -61,7 +61,7 @@ defmodule Bonfire.WebPhoenix do
   def channel do
     quote do
       use Phoenix.Channel
-      import Bonfire.Common.Localise.Gettext
+      use Gettext, backend: Bonfire.Common.Localise.Gettext
     end
   end
 
@@ -77,7 +77,7 @@ defmodule Bonfire.WebPhoenix do
       import Phoenix.View
 
       import Bonfire.WebPhoenix.ErrorHelpers
-      import Bonfire.Common.Localise.Gettext
+      use Gettext, backend: Bonfire.Common.Localise.Gettext
       alias Bonfire.WebPhoenix.Router.Helpers, as: Routes
 
       import Bonfire.WebPhoenixHelpers
