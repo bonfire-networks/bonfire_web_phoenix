@@ -1,5 +1,6 @@
 defmodule Bonfire.WebPhoenix.Endpoint do
   use Phoenix.Endpoint, otp_app: :bonfire_web_phoenix
+  use Bonfire.Common.Config
 
   # The session will be stored in the cookie and signed,
   # this means its contents can be read but not tampered with.

@@ -1,5 +1,6 @@
 defmodule Bonfire.WebPhoenix.Telemetry do
   use Supervisor
+  use Bonfire.Common.Config
   import Telemetry.Metrics
 
   def start_link(arg) do

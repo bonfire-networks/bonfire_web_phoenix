@@ -1,4 +1,5 @@
 defmodule Bonfire.WebPhoenix.Router do
+  use Bonfire.Common.Config
   use Bonfire.WebPhoenix, :router
 
   pipeline :browser do
